@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Niveau 7 — Prépare l'oral du TCF Canada</title>
+<meta name="description" content="Enregistre ta réponse, reçois une note estimée sur 20 et une correction expliquée en français, en arabe ou en anglais.">
+<!--
+  ================= RÉGLAGES (à remplir) =================
+  1) GOATCOUNTER : remplace TON-CODE par ton code GoatCounter (ex. niveau7).
+  2) TALLY_URL   : colle le lien de ton formulaire Tally (ex. https://tally.so/r/abc123).
+  =========================================================
+-->
+<script>
+  window.TALLY_URL = "https://tally.so/r/DqBopb";
+</script>
+<script data-goatcounter="https://niveau7.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<style>
+  :root{
+    --bg:#f7f8fb; --surface:#ffffff; --ink:#14182b; --muted:#5b6275; --line:#e4e7ef;
+    --brand:#1f4fd8; --brand-ink:#ffffff; --brand-soft:#e8eefc;
+    --ok:#0f8a5f; --ok-soft:#e3f5ee; --warn:#b4560b; --warn-soft:#fdf0e3;
+    --radius:16px; --shadow:0 10px 30px rgba(20,24,43,.08);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans Arabic",sans-serif}
+  a{color:var(--brand)}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+  header.top{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+  .logo{font-weight:800;letter-spacing:-.02em;font-size:20px}
+  .logo span{color:var(--brand)}
+  .pill{font-size:13px;background:var(--brand-soft);color:var(--brand);padding:4px 10px;border-radius:99px;font-weight:600}
+
+  .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:24px 0 48px}
+  h1{font-size:clamp(30px,5vw,46px);line-height:1.1;letter-spacing:-.03em;margin:0 0 16px}
+  h1 em{font-style:normal;color:var(--brand)}
+  .lead{font-size:18px;color:var(--muted);margin:0 0 24px;max-width:34em}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;
+       background:var(--brand);color:var(--brand-ink);font-weight:700;font-size:16px;padding:14px 22px;border-radius:12px;text-decoration:none}
+  .btn:hover{filter:brightness(1.08)}
+  .btn.ghost{background:transparent;color:var(--brand);border:2px solid var(--brand)}
+  .checks{list-style:none;padding:0;margin:20px 0 0;color:var(--muted);font-size:15px}
+  .checks li{padding-left:24px;position:relative;margin:6px 0}
+  .checks li:before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:800}
+
+  /* Téléphone */
+  .phone{background:#0d1020;border-radius:40px;padding:12px;box-shadow:var(--shadow);max-width:340px;margin:0 auto;width:100%}
+  .screen{background:var(--surface);border-radius:30px;overflow:hidden;min-height:560px;display:flex;flex-direction:column}
+  .sbar{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);padding:10px 20px 4px}
+  .shead{padding:6px 18px 12px;border-bottom:1px solid var(--line)}
+  .shead small{color:var(--muted);font-size:12px}
+  .shead b{display:block;font-size:15px;line-height:1.3;margin-top:2px}
+  .score{display:flex;gap:10px;padding:14px 18px}
+  .score .big{background:var(--ok-soft);color:var(--ok);border-radius:14px;padding:10px 14px;text-align:center;min-width:92px}
+  .score .big strong{display:block;font-size:26px;line-height:1}
+  .score .big span{font-size:11px;font-weight:600}
+  .score .meta{font-size:12px;color:var(--muted);align-self:center}
+  .score .meta b{color:var(--ink)}
+  .tabs{display:flex;gap:6px;padding:0 18px 10px}
+  .tab{flex:1;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:7px 4px;font-size:13px;font-weight:700;cursor:pointer;color:var(--muted)}
+  .tab[aria-selected="true"]{background:var(--brand);border-color:var(--brand);color:#fff}
+  .errs{padding:0 18px 16px;display:flex;flex-direction:column;gap:10px}
+  .err{border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:13px}
+  .err .said{color:var(--warn);text-decoration:line-through}
+  .err .fix{color:var(--ok);font-weight:700}
+  .err p{margin:6px 0 0;color:var(--muted)}
+  .err[dir="rtl"] p{font-size:14px}
+  .stag{font-size:11px;font-weight:700;color:var(--brand);text-transform:uppercase;letter-spacing:.04em}
+
+  section{padding:48px 0}
+  h2{font-size:clamp(24px,3.5vw,32px);letter-spacing:-.02em;margin:0 0 8px}
+  .sub{color:var(--muted);margin:0 0 28px}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+  .card .n{width:32px;height:32px;border-radius:99px;background:var(--brand-soft);color:var(--brand);display:grid;place-items:center;font-weight:800;margin-bottom:10px}
+  .card h3{margin:0 0 6px;font-size:17px}
+  .card p{margin:0;color:var(--muted);font-size:15px}
+
+  .prices{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch}
+  .price{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:flex;flex-direction:column}
+  .price.best{border:2px solid var(--brand);box-shadow:var(--shadow);position:relative}
+  .price.best .tag{position:absolute;top:-12px;left:20px;background:var(--brand);color:#fff;font-size:12px;font-weight:700;padding:3px 10px;border-radius:99px}
+  .price h3{margin:0;font-size:16px;color:var(--muted)}
+  .price .amt{font-size:34px;font-weight:800;letter-spacing:-.02em;margin:6px 0 2px}
+  .price .per{color:var(--muted);font-size:14px;margin-bottom:14px}
+  .price ul{list-style:none;padding:0;margin:0 0 18px;font-size:14px;color:var(--muted);flex:1}
+  .price li{margin:5px 0;padding-left:20px;position:relative}
+  .price li:before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:800}
+  .price .btn{width:100%}
+  .free{margin-top:16px;text-align:center;color:var(--muted);font-size:14px}
+
+  details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:10px}
+  summary{font-weight:700;cursor:pointer}
+  details p{color:var(--muted);margin:8px 0 0}
+
+  footer{padding:32px 0 48px;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+
+  /* Fenêtre "bientôt" */
+  .modal{position:fixed;inset:0;background:rgba(13,16,32,.55);display:none;align-items:center;justify-content:center;padding:16px;z-index:10}
+  .modal.open{display:flex}
+  .box{background:var(--surface);border-radius:20px;max-width:440px;width:100%;padding:26px;box-shadow:var(--shadow)}
+  .box h3{margin:0 0 8px;font-size:22px}
+  .box p{color:var(--muted);margin:0 0 18px}
+  .box .row{display:flex;gap:10px;flex-wrap:wrap}
+  .box .row .btn{flex:1}
+  .close{background:none;border:0;color:var(--muted);font-size:14px;cursor:pointer;margin-top:12px;padding:6px 0}
+
+  @media (max-width:820px){
+    .hero{grid-template-columns:1fr;gap:28px;padding-top:8px}
+    .steps,.prices{grid-template-columns:1fr}
+    .price.best{order:-1}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <div class="logo">Niveau <span>7</span></div>
+    <div class="pill">TCF Canada · Bientôt sur iPhone</div>
+  </header>
+
+  <div class="hero">
+    <div>
+      <h1>Atteins <em>10/20</em> à l'oral du TCF&nbsp;Canada</h1>
+      <p class="lead">Enregistre ta réponse comme le jour de l'examen. Reçois une note estimée et une correction expliquée <b>en français, en arabe ou en anglais</b>.</p>
+      <a href="#prix" class="btn" data-ev="clic-hero">Voir les prix</a>
+      <ul class="checks">
+        <li>Sujets des tâches 1, 2 et 3, chronométrés comme le jour J</li>
+        <li>Tes 3 erreurs les plus coûteuses, expliquées simplement</li>
+        <li>Une version améliorée de ta propre réponse</li>
+      </ul>
+    </div>
+
+    <!-- Maquette de la correction -->
+    <div class="phone" aria-label="Exemple de correction dans l'app">
+      <div class="screen">
+        <div class="sbar"><span>9:41</span><span>Correction</span></div>
+        <div class="shead">
+          <small>Tâche 3 · Point de vue · 4 min 30</small>
+          <b>« Le télétravail est-il une bonne chose pour les salariés ? »</b>
+        </div>
+        <div class="score">
+          <div class="big"><strong>11/20</strong><span>NCLC 7 estimé</span></div>
+          <div class="meta">Objectif : <b>10/20</b><br>Débit : <b>98 mots/min</b><br>Hésitations : <b>6</b></div>
+        </div>
+        <div class="tabs" role="tablist">
+          <button class="tab" role="tab" aria-selected="true" data-lang="fr">Français</button>
+          <button class="tab" role="tab" aria-selected="false" data-lang="ar">العربية</button>
+          <button class="tab" role="tab" aria-selected="false" data-lang="en">English</button>
+        </div>
+        <div class="errs" id="errs"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <h2>Comment ça marche</h2>
+    <p class="sub">10 minutes par jour jusqu'à ta date d'examen.</p>
+    <div class="steps">
+      <div class="card"><div class="n">1</div><h3>Choisis ta date</h3><p>L'app prépare un plan jour par jour jusqu'à ton examen.</p></div>
+      <div class="card"><div class="n">2</div><h3>Parle ou écris</h3><p>Un sujet, un chrono, comme le jour J. Ta réponse est enregistrée.</p></div>
+      <div class="card"><div class="n">3</div><h3>Comprends tes erreurs</h3><p>Note estimée, erreurs prioritaires et réponse améliorée, dans ta langue.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="prix">
+  <div class="wrap">
+    <h2>Les prix</h2>
+    <p class="sub">Sans engagement : tu arrêtes quand tu veux.</p>
+    <div class="prices">
+      <div class="price">
+        <h3>Pass 1 semaine</h3>
+        <div class="amt">7,99 $</div><div class="per">pour 7 jours</div>
+        <ul><li>Oral et écrit illimités*</li><li>Corrections en FR / AR / EN</li></ul>
+        <button class="btn ghost" data-plan="semaine" data-ev="clic-prix-semaine">Prendre le pass 1 semaine – 7,99 $</button>
+      </div>
+      <div class="price best">
+        <span class="tag">Le plus choisi</span>
+        <h3>Pass 1 mois</h3>
+        <div class="amt">14,99 $</div><div class="per">pour 30 jours</div>
+        <ul><li>Oral et écrit illimités*</li><li>Corrections en FR / AR / EN</li><li>Plan jusqu'à ta date d'examen</li></ul>
+        <button class="btn" data-plan="mois" data-ev="clic-prix-mois">Prendre le pass 1 mois – 14,99 $</button>
+      </div>
+      <div class="price">
+        <h3>Pass 3 mois</h3>
+        <div class="amt">29,99 $</div><div class="per">pour 90 jours</div>
+        <ul><li>Tout le pass 1 mois</li><li>Le moins cher par jour</li></ul>
+        <button class="btn ghost" data-plan="3mois" data-ev="clic-prix-3mois">Prendre le pass 3 mois – 29,99 $</button>
+      </div>
+    </div>
+    <p class="free">Un diagnostic gratuit (1 réponse orale + 1 écrite) sera inclus pour tester avant d'acheter.<br>* Usage raisonnable : jusqu'à 15 corrections par jour.</p>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2>Questions</h2>
+    <details><summary>La note est-elle officielle ?</summary><p>Non. C'est une estimation pour t'entraîner. Seul l'examen officiel donne ta vraie note.</p></details>
+    <details><summary>Ça marche aussi pour le TEF Canada ?</summary><p>L'app commence par le TCF Canada. Le TEF Canada est prévu ensuite.</p></details>
+    <details><summary>Android ?</summary><p>L'app sort d'abord sur iPhone. Laisse ton e-mail et ton type de téléphone : ça nous aide à décider pour Android.</p></details>
+  </div>
+</section>
+
+<div class="wrap">
+  <footer>
+    Niveau 7 est un projet indépendant. Il n'est affilié ni à France Éducation international, ni à IRCC, ni au gouvernement du Canada.<br>
+    Ton e-mail sert uniquement à te prévenir de la sortie de l'app.
+  </footer>
+</div>
+
+<!-- Fenêtre affichée après un clic sur un prix -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mtitle">
+  <div class="box">
+    <h3 id="mtitle">L'app sort bientôt</h3>
+    <p>Elle n'est pas encore disponible et <b>aucun paiement n'a été fait</b>. Laisse ton e-mail et ta date d'examen : les 100 premiers inscrits auront <b>50 % de réduction</b> à la sortie.</p>
+    <div class="row">
+      <a class="btn" id="mail" href="#" target="_blank" rel="noopener" data-ev="clic-email">Laisser mon e-mail</a>
+    </div>
+    <button class="close" id="close">Fermer</button>
+  </div>
+</div>
+
+<script>
+  // --- Comptage des clics (GoatCounter). Ne bloque jamais la page si le script n'est pas chargé.
+  function track(name){
+    try{ if(window.goatcounter && window.goatcounter.count){ window.goatcounter.count({path:name, title:name, event:true}); } }catch(e){}
+  }
+
+  // --- Exemple de correction dans les 3 langues
+  var ERRS = {
+    fr:[
+      {said:"le télétravail il est bien", fix:"le télétravail est une bonne chose", why:"Ne répète pas le sujet avec « il ». Cette erreur coûte des points à l'oral."},
+      {said:"c'est plus meilleur", fix:"c'est meilleur", why:"« Meilleur » contient déjà l'idée de « plus »."},
+      {said:"Aussi… aussi… aussi…", fix:"D'abord… Ensuite… Enfin…", why:"Varie tes connecteurs pour organiser ton point de vue : le correcteur le note."}
+    ],
+    ar:[
+      {said:"le télétravail il est bien", fix:"le télétravail est une bonne chose", why:"لا تكرّر الفاعل بـ « il ». نقول « le télétravail est » مباشرة. هذا خطأ شائع عند من يفكّر بالدارجة أو بالعربية."},
+      {said:"c'est plus meilleur", fix:"c'est meilleur", why:"كلمة « meilleur » تعني أصلاً « أفضل »، فلا نضيف « plus »."},
+      {said:"Aussi… aussi… aussi…", fix:"D'abord… Ensuite… Enfin…", why:"نوّع أدوات الربط لتنظيم رأيك: أولاً، بعد ذلك، أخيراً. المصحّح ينتبه لهذا."}
+    ],
+    en:[
+      {said:"le télétravail il est bien", fix:"le télétravail est une bonne chose", why:"Don't repeat the subject with « il ». Say « le télétravail est » directly."},
+      {said:"c'est plus meilleur", fix:"c'est meilleur", why:"« Meilleur » already means « better », so drop « plus »."},
+      {said:"Aussi… aussi… aussi…", fix:"D'abord… Ensuite… Enfin…", why:"Vary your linking words to structure your opinion; examiners reward it."}
+    ]
+  };
+  var LABEL = {fr:"Erreur", ar:"خطأ", en:"Mistake"};
+  function render(lang){
+    var box = document.getElementById('errs');
+    box.innerHTML = '';
+    ERRS[lang].forEach(function(e,i){
+      var d = document.createElement('div');
+      d.className = 'err';
+      if(lang==='ar') d.setAttribute('dir','rtl');
+      d.innerHTML = '<div class="stag">'+LABEL[lang]+' '+(i+1)+'</div>'
+        + '<div dir="ltr" style="text-align:'+(lang==='ar'?'right':'left')+'"><span class="said"></span> → <span class="fix"></span></div>'
+        + '<p></p>';
+      d.querySelector('.said').textContent = e.said;
+      d.querySelector('.fix').textContent = e.fix;
+      d.querySelector('p').textContent = e.why;
+      box.appendChild(d);
+    });
+  }
+  render('fr');
+  document.querySelectorAll('.tab').forEach(function(t){
+    t.addEventListener('click', function(){
+      document.querySelectorAll('.tab').forEach(function(x){ x.setAttribute('aria-selected','false'); });
+      t.setAttribute('aria-selected','true');
+      render(t.dataset.lang);
+      track('langue-'+t.dataset.lang);
+    });
+  });
+
+  // --- Clics suivis (héros, e-mail)
+  document.querySelectorAll('[data-ev]').forEach(function(el){
+    if(el.dataset.plan) return;
+    el.addEventListener('click', function(){ track(el.dataset.ev); });
+  });
+
+  // --- Boutons de prix -> fenêtre "bientôt"
+  var modal = document.getElementById('modal');
+  var mail = document.getElementById('mail');
+  document.querySelectorAll('[data-plan]').forEach(function(b){
+    b.addEventListener('click', function(){
+      track(b.dataset.ev);
+      var sep = window.TALLY_URL.indexOf('?')>-1 ? '&' : '?';
+      mail.href = window.TALLY_URL + sep + 'plan=' + encodeURIComponent(b.dataset.plan);
+      modal.classList.add('open');
+    });
+  });
+  function closeModal(){ modal.classList.remove('open'); }
+  document.getElementById('close').addEventListener('click', closeModal);
+  modal.addEventListener('click', function(e){ if(e.target===modal) closeModal(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeModal(); });
+</script>
+</body>
+</html>
